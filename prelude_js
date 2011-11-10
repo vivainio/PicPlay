@@ -1,0 +1,9 @@
+.pragma library
+
+var jsexports = {};
+
+var exports = jsexports;
+
+
+
+
