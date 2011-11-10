@@ -6,6 +6,10 @@ Page {
 
     PicList {
         anchors.fill: parent
+        onImageSelected: {
+            pageStack.push(fullPicPage)
+            fullPicPage.setImage(imageObj)
+        }
     }
 
 }

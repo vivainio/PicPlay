@@ -6,6 +6,10 @@ PageStackWindow {
 
     initialPage: mainPage
 
+    FullPic {
+        id: fullPicPage
+    }
+
     MainPage {
         id: mainPage
     }
@@ -13,6 +17,13 @@ PageStackWindow {
     ToolBarLayout {
         id: commonTools
         visible: true
+        ToolIcon {
+            platformIconId: "toolbar-back"
+            onClicked: {
+                pageStack.pop()
+            }
+
+        }
         ToolIcon {
             platformIconId: "toolbar-view-menu"
             anchors.right: (parent === undefined) ? undefined : parent.right

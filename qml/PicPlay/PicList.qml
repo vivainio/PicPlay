@@ -6,6 +6,7 @@ Item {
     width: 360
     height: 360
 
+    signal imageSelected(variant imageObj)
     ListModel {
         id: imagelist        
     }
@@ -24,7 +25,18 @@ Item {
                 height: Thumbnail.Height
                 width: Thumbnail.Width
 
+
+
             }
+            MouseArea {
+                anchors.fill: img
+                onClicked: {
+                    var obj = imagelist.get(index)
+                    console.log("Clicked " + obj)
+                    imageSelected(obj)
+                }
+            }
+
             Text {
                 anchors.left: img.right
                 anchors.verticalCenter: img.verticalCenter
